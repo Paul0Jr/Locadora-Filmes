@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Filmes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .header {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 { color: #333; font-size: 1.5rem; font-weight: 600; }
+        .header a { color: #007bff; text-decoration: none; font-weight: 500; }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .movie-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .delete-btn:hover {
+            background: #f1f1f1;
+        }
+
+        .delete-btn-icon {
+            color: #333;
+            font-size: 16px;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .movie-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .movie-card h3 {
+            padding: 1rem;
+            font-size: 1.2rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .movie-description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 1.5rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(100%);
+
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+        }
+
+        .movie-card.show-description .movie-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .movie-card.show-description img {
+            filter: brightness(0.4);
+        }
+
+        .action-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            margin-right: 1rem;
+        }
+        .action-btn:hover { background-color: #0056b3; }
+        .header a.back-link {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .header > div {
+            display: flex;
+            align-items: center;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+        .modal-content h2 { margin-bottom: 1.5rem; text-align: center; }
+        .modal-content .input-group { margin-bottom: 1rem; }
+        .modal-content .input-group label { margin-bottom: 0.5rem; display: block; }
+        .modal-content .input-group input,
+        .modal-content .input-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .modal-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+        .modal-actions .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .btn.btn-primary { background-color: #007bff; color: white; }
+        .btn.btn-secondary { background-color: #6c757d; color: white; }
+        .btn.btn-danger { background-color: #dc3545; color: white; }
+
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1>🎬 Catálogo de Filmes</h1>
+    <button id="addMovieBtn" class="action-btn">Adicionar Filme</button>
+    <a href="/dashboard">Voltar para o Dashboard</a>
+</header>
+
+<div class="container">
+    <div class="movie-grid">
+        <div class="movie-card" th:each="movie : ${filmes}">
+            <button class="delete-btn" th:data-id="${movie.id}" th:data-nome="${movie.nome}">
+                <span class="delete-btn-icon">🗑️</span>
+            </button>
+            <h3 th:text="${movie.nome}">Nome do Filme</h3>
+
+            <div class="movie-lancamento">
+                <p th:text="${movie.lancamento}">Ano de Lançamento do filme</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="addMovieModal" class="modal-overlay">
+    <div class="modal-content">
+        <h2>Adicionar Novo Filme</h2>
+        <form th:action="@{/filmes/adicionar}" method="post">
+            <div class="input-group">
+                <label for="nome">Título do Filme</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="input-group">
+                <label for="diretor">Diretor</label>
+                <input type="text" id="diretor" name="diretor" required>
+            </div>
+
+            <div class="input-group">
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" name="descricao" rows="3" required></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="genero">Gênero</label>
+                <input type="text" id="genero" name="genero" required>
+            </div>
+
+            <div class="input-group">
+                <label for="lancamento">Ano de Lançamento</label>
+                <input type="text" id="lancamento" name="lancamento" required>
+            </div>
+
+            <div class="input-group">
+                <label for="classificacao">Classificação Indicativa</label>
+                <input type="text" id="classificacao" name="classificacao" required>
+            </div>
+
+            <div class="input-group">
+                <label for="preco">Preço</label>
+                <input type="text" id="preco" name="preco" required>
+            </div>
+
+            <div class="input-group">
+                <label for="urlImagem">URL da Imagem (Pôster)</label>
+                <input type="url" id="urlImagem" name="urlImagem" required>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Salvar Filme</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="deleteMovieModal" class="modal-overlay">
+    <div class="modal-content">
+        <h2>Confirmar Exclusão</h2>
+        <p>Você tem certeza que deseja excluir o filme "<span id="movieNameToDelete"></span>"?</p>
+        <div class="modal-actions">
+            <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancelar</button>
+            <form id="deleteForm" method="post">
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const movieGrid = document.querySelector('.movie-grid');
+
+        if (movieGrid) {
+            movieGrid.addEventListener('click', function(event) {
+                if (event.target.closest('.delete-btn')) {
+                    const button = event.target.closest('.delete-btn');
+                    const movieId = button.dataset.id;
+                    const movieName = button.dataset.nome;
+
+                    const deleteForm = document.getElementById('deleteForm');
+                    deleteForm.action = '/filmes/deletar/' + movieId;
+
+                    document.getElementById('movieNameToDelete').textContent = movieName;
+                    document.getElementById('deleteMovieModal').style.display = 'flex';
+                }
+            });
+        }
+
+        const addMovieBtn = document.getElementById('addMovieBtn');
+        const addMovieModal = document.getElementById('addMovieModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const deleteMovieModal = document.getElementById('deleteMovieModal');
+        const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
+
+        addMovieBtn.addEventListener('click', function() {
+            addMovieModal.style.display = 'flex';
+        });
+
+        closeModalBtn.addEventListener('click', function() {
+            addMovieModal.style.display = 'none';
+        });
+
+        cancelDeleteBtn.addEventListener('click', function() {
+            deleteMovieModal.style.display = 'none';
+        });
+
+        addMovieModal.addEventListener('click', function(event) {
+            if (event.target === addMovieModal) {
+                addMovieModal.style.display = 'none';
+            }
+        });
+
+        deleteMovieModal.addEventListener('click', function(event) {
+            if (event.target === deleteMovieModal) {
+                deleteMovieModal.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>
