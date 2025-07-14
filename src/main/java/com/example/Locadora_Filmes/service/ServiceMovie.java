@@ -33,6 +33,19 @@ public class ServiceMovie {
         return repositoryMovie.save(movie);
     }
 
+    //Atualizar no banco
+    public Movie updateMovie(Long id, String nome, String diretor, int lancamento, String genero, String classificacao, double preco, String imagem) {
+        Movie movie = searchId(id);
+        movie.setNome(nome);
+        movie.setDiretor(diretor);
+        movie.setLancamento(lancamento);
+        movie.setGenero(genero);
+        movie.setClassificacao(classificacao);
+        movie.setPreco(preco);
+        movie.setImagem(imagem);
+        return repositoryMovie.save(movie);
+    }
+
     //Deletar no banco
     public void deleteMovie(Long id) {
         if (!repositoryMovie.existsById(id)) {

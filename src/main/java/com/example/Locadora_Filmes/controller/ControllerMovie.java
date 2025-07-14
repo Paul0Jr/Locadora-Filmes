@@ -99,6 +99,75 @@ public class ControllerMovie {
             e.printStackTrace();
             redirectAttributes.addFlashAttribute("error", "Ocorreu um erro ao fazer o upload da imagem: " + e.getMessage());
         }
+        System.out.println("Arquivo alterado!");
+        return "redirect:/filmes";
+    }
+
+    @GetMapping("/filmes/{id}")
+    @ResponseBody
+    public Movie getMovieDetails(@PathVariable Long id) {
+        return serviceMovie.searchId(id);
+    }
+
+    @PostMapping("/filmes/atualizar/{id}")
+    public String updateMovie(@PathVariable Long id,
+                             @RequestParam String nome,
+                             @RequestParam String diretor,
+                             @RequestParam int lancamento,
+                             @RequestParam String genero,
+                             @RequestParam String classificacao,
+                             @RequestParam double preco,
+                             @RequestParam(value = "imagemFile", required = false) MultipartFile imagemFile,
+                             RedirectAttributes redirectAttributes) {
+
+        try {
+            Movie existingMovie = serviceMovie.searchId(id);
+            String urlImagem = existingMovie.getImagem(); // Mantém a imagem atual por padrão
+
+            // Se uma nova imagem foi enviada, processa ela
+            if (imagemFile != null && !imagemFile.isEmpty()) {
+                // Validar tipo de arquivo
+                String originalFilename = imagemFile.getOriginalFilename();
+                if (originalFilename == null || originalFilename.isEmpty()) {
+                    redirectAttributes.addFlashAttribute("error", "Nome do arquivo inválido.");
+                    return "redirect:/filmes";
+                }
+
+                String contentType = imagemFile.getContentType();
+                if (contentType == null || !contentType.startsWith("image/")) {
+                    redirectAttributes.addFlashAttribute("error", "Por favor, selecione apenas arquivos de imagem (JPG, PNG, GIF, etc.).");
+                    return "redirect:/filmes";
+                }
+
+                String fileExtension = originalFilename.substring(originalFilename.lastIndexOf(".")).toLowerCase();
+                
+                // Validar extensão
+                if (!fileExtension.matches("\\.(jpg|jpeg|png|gif|bmp|webp)$")) {
+                    redirectAttributes.addFlashAttribute("error", "Formato de imagem não suportado. Use JPG, PNG, GIF, BMP ou WebP.");
+                    return "redirect:/filmes";
+                }
+                
+                String uniqueFilename = UUID.randomUUID().toString() + fileExtension;
+
+                Path uploadPath = Paths.get(UPLOAD_DIR);
+                if (!Files.exists(uploadPath)) {
+                    Files.createDirectories(uploadPath);
+                }
+
+                Path filePath = uploadPath.resolve(uniqueFilename);
+                Files.write(filePath, imagemFile.getBytes());
+
+                urlImagem = "/uploads/" + uniqueFilename;
+            }
+
+            serviceMovie.updateMovie(id, nome, diretor, lancamento, genero, classificacao, preco, urlImagem);
+            redirectAttributes.addFlashAttribute("success", "Filme atualizado com sucesso!");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            redirectAttributes.addFlashAttribute("error", "Erro ao atualizar filme: " + e.getMessage());
+        }
+        
         return "redirect:/filmes";
     }
 
@@ -107,6 +176,8 @@ public class ControllerMovie {
         serviceMovie.deleteMovie(id);
         return "redirect:/filmes";
     }
+
+    
 
     /*@GetMapping("/{id}")
     public ResponseEntity<?> searchMovie(@PathVariable Long id) {

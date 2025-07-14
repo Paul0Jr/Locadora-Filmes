@@ -9,6 +9,96 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
+
+        /* Estilo básico para o catálogo */
+        .catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .filme-item {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Estilos para o Modal */
+        .modal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none; /* Começa oculto */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fechar-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-conteudo {
+            max-height: 70vh; /* Altura máxima para o conteúdo */
+            overflow-y: auto; /* Adiciona a barra de rolagem vertical quando necessário */
+            margin-bottom: 20px;
+        }
+
+        .modal-conteudo h2 {
+            margin-top: 0;
+        }
+
+        .modal-botoes {
+            text-align: right;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #btn-atualizar {
+            background-color: #007bff;
+            color: white;
+        }
+
+        #btn-salvar {
+            background-color: #28a745;
+            color: white;
+        }
+
+        /* Estilos para os campos de formulário no modo de edição */
+        .campo-editavel {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Poppins', sans-serif;
@@ -91,6 +181,7 @@
             font-size: 1.2rem;
             color: #333;
             text-align: center;
+            cursor: pointer;
         }
 
         .movie-description {
@@ -192,6 +283,138 @@
         .btn.btn-secondary { background-color: #6c757d; color: white; }
         .btn.btn-danger { background-color: #dc3545; color: white; }
 
+        /* Modal de detalhes do filme */
+        .movie-details-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .movie-details-content {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .movie-details-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .movie-details-header h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        .close-details-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .movie-details-body {
+            padding: 1.5rem;
+        }
+
+        .movie-details-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .movie-details-info {
+            margin-bottom: 1rem;
+        }
+
+        .movie-details-info label {
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .movie-details-info span {
+            color: #666;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .edit-form {
+            display: none;
+        }
+
+        .edit-form input,
+        .edit-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .movie-details-actions {
+            padding: 1.5rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .btn-edit {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-save {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            display: none;
+        }
+
+        .btn-cancel {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -278,10 +501,109 @@
     </div>
 </div>
 
+<!-- Modal de Detalhes do Filme -->
+<div id="movieDetailsModal" class="movie-details-modal">
+    <div class="movie-details-content">
+        <div class="movie-details-header">
+            <h2>Detalhes do Filme</h2>
+            <button class="close-details-btn" id="closeDetailsBtn">&times;</button>
+        </div>
+        
+        <div class="movie-details-body">
+            <img id="detailMovieImage" class="movie-details-image" alt="Pôster do Filme">
+            
+            <!-- Informações em modo visualização -->
+            <div id="movieInfoView">
+                <div class="movie-details-info">
+                    <label>Título:</label>
+                    <span id="detailMovieName"></span>
+                </div>
+                <div class="movie-details-info">
+                    <label>Diretor:</label>
+                    <span id="detailMovieDirector"></span>
+                </div>
+                <div class="movie-details-info">
+                    <label>Ano de Lançamento:</label>
+                    <span id="detailMovieYear"></span>
+                </div>
+                <div class="movie-details-info">
+                    <label>Gênero:</label>
+                    <span id="detailMovieGenre"></span>
+                </div>
+                <div class="movie-details-info">
+                    <label>Classificação Indicativa:</label>
+                    <span id="detailMovieRating"></span>
+                </div>
+                <div class="movie-details-info">
+                    <label>Preço:</label>
+                    <span id="detailMoviePrice"></span>
+                </div>
+            </div>
+            
+            <!-- Formulário de edição -->
+            <form id="editMovieForm" class="edit-form" method="post" enctype="multipart/form-data">
+                <div class="movie-details-info">
+                    <label for="editNome">Título:</label>
+                    <input type="text" id="editNome" name="nome" required>
+                </div>
+                <div class="movie-details-info">
+                    <label for="editDiretor">Diretor:</label>
+                    <input type="text" id="editDiretor" name="diretor" required>
+                </div>
+                <div class="movie-details-info">
+                    <label for="editLancamento">Ano de Lançamento:</label>
+                    <input type="number" id="editLancamento" name="lancamento" required>
+                </div>
+                <div class="movie-details-info">
+                    <label for="editGenero">Gênero:</label>
+                    <input type="text" id="editGenero" name="genero" required>
+                </div>
+                <div class="movie-details-info">
+                    <label for="editClassificacao">Classificação Indicativa:</label>
+                    <input type="text" id="editClassificacao" name="classificacao" required>
+                </div>
+                <div class="movie-details-info">
+                    <label for="editPreco">Preço:</label>
+                    <input type="number" id="editPreco" name="preco" step="0.01" required>
+                </div>
+                <div class="movie-details-info">
+                    <label for="editImagemFile">Nova Imagem (opcional):</label>
+                    <input type="file" id="editImagemFile" name="imagemFile" accept="image/*">
+                </div>
+            </form>
+        </div>
+        
+        <div class="movie-details-actions">
+            <button type="button" class="btn-edit" id="editMovieBtn">Atualizar</button>
+            <button type="button" class="btn-save" id="saveMovieBtn">Salvar</button>
+            <button type="button" class="btn-cancel" id="cancelEditBtn">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+</div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const movieGrid = document.querySelector('.movie-grid');
+        const addMovieBtn = document.getElementById('addMovieBtn');
+        const addMovieModal = document.getElementById('addMovieModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const deleteMovieModal = document.getElementById('deleteMovieModal');
+        const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
+        const movieDetailsModal = document.getElementById('movieDetailsModal');
+        const closeDetailsBtn = document.getElementById('closeDetailsBtn');
+        const editMovieBtn = document.getElementById('editMovieBtn');
+        const saveMovieBtn = document.getElementById('saveMovieBtn');
+        const cancelEditBtn = document.getElementById('cancelEditBtn');
+        const editMovieForm = document.getElementById('editMovieForm');
+        const movieInfoView = document.getElementById('movieInfoView');
+        
+        let currentMovieId = null;
 
+        // Event listeners para exclusão
         if (movieGrid) {
             movieGrid.addEventListener('click', function(event) {
                 if (event.target.closest('.delete-btn')) {
@@ -293,17 +615,119 @@
                     deleteForm.action = '/filmes/deletar/' + movieId;
 
                     document.getElementById('movieNameToDelete').textContent = movieName;
-                    document.getElementById('deleteMovieModal').style.display = 'flex';
+                    deleteMovieModal.style.display = 'flex';
                 }
             });
         }
 
-        const addMovieBtn = document.getElementById('addMovieBtn');
-        const addMovieModal = document.getElementById('addMovieModal');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const deleteMovieModal = document.getElementById('deleteMovieModal');
-        const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
+        // Event listeners para detalhes do filme
+        if (movieGrid) {
+            movieGrid.addEventListener('click', function(event) {
+                const movieCard = event.target.closest('.movie-card');
+                if (movieCard && !event.target.closest('.delete-btn')) {
+                    const movieId = movieCard.querySelector('.delete-btn').dataset.id;
+                    loadMovieDetails(movieId);
+                }
+            });
+        }
 
+        // Função para carregar detalhes do filme
+        function loadMovieDetails(movieId) {
+            currentMovieId = movieId;
+            fetch(`/filmes/${movieId}`)
+                .then(response => response.json())
+                .then(movie => {
+                    document.getElementById('detailMovieImage').src = movie.imagem;
+                    document.getElementById('detailMovieName').textContent = movie.nome;
+                    document.getElementById('detailMovieDirector').textContent = movie.diretor;
+                    document.getElementById('detailMovieYear').textContent = movie.lancamento;
+                    document.getElementById('detailMovieGenre').textContent = movie.genero;
+                    document.getElementById('detailMovieRating').textContent = movie.classificacao;
+                    document.getElementById('detailMoviePrice').textContent = `R$ ${movie.preco.toFixed(2)}`;
+                    
+                    // Preencher formulário de edição
+                    document.getElementById('editNome').value = movie.nome;
+                    document.getElementById('editDiretor').value = movie.diretor;
+                    document.getElementById('editLancamento').value = movie.lancamento;
+                    document.getElementById('editGenero').value = movie.genero;
+                    document.getElementById('editClassificacao').value = movie.classificacao;
+                    document.getElementById('editPreco').value = movie.preco;
+                    
+                    movieDetailsModal.style.display = 'flex';
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar detalhes do filme:', error);
+                    alert('Erro ao carregar detalhes do filme');
+                });
+        }
+
+        // Event listeners para modal de detalhes
+        closeDetailsBtn.addEventListener('click', function() {
+            movieDetailsModal.style.display = 'none';
+            resetEditMode();
+        });
+
+        movieDetailsModal.addEventListener('click', function(event) {
+            if (event.target === movieDetailsModal) {
+                movieDetailsModal.style.display = 'none';
+                resetEditMode();
+            }
+        });
+
+        // Event listeners para edição
+        editMovieBtn.addEventListener('click', function() {
+            enterEditMode();
+        });
+
+        saveMovieBtn.addEventListener('click', function() {
+            saveMovieChanges();
+        });
+
+        cancelEditBtn.addEventListener('click', function() {
+            resetEditMode();
+        });
+
+        function enterEditMode() {
+            movieInfoView.style.display = 'none';
+            editMovieForm.style.display = 'block';
+            editMovieBtn.style.display = 'none';
+            saveMovieBtn.style.display = 'inline-block';
+            cancelEditBtn.style.display = 'inline-block';
+        }
+
+        function resetEditMode() {
+            movieInfoView.style.display = 'block';
+            editMovieForm.style.display = 'none';
+            editMovieBtn.style.display = 'inline-block';
+            saveMovieBtn.style.display = 'none';
+            cancelEditBtn.style.display = 'none';
+        }
+
+        function saveMovieChanges() {
+            const formData = new FormData(editMovieForm);
+            
+            fetch(`/filmes/atualizar/${currentMovieId}`, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Filme atualizado com sucesso!');
+                    movieDetailsModal.style.display = 'none';
+                    resetEditMode();
+                    // Recarregar a página para mostrar as mudanças
+                    window.location.reload();
+                } else {
+                    throw new Error('Erro ao atualizar filme');
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao salvar alterações:', error);
+                alert('Erro ao salvar alterações do filme');
+            });
+        }
+
+        // Event listeners para modal de adicionar filme
         addMovieBtn.addEventListener('click', function() {
             addMovieModal.style.display = 'flex';
         });
