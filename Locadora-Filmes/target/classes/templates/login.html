@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Dentro da sua tag <style> */
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            box-shadow: 0 2px 4px rgba(220, 53, 69, 0.1);
+        }
+
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            box-shadow: 0 2px 4px rgba(40, 167, 69, 0.1);
+        }
+
+        .alert-info {
+            color: #0c5460;
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            box-shadow: 0 2px 4px rgba(23, 162, 184, 0.1);
+        }
+
+        .alert-icon {
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .alert-close {
+            float: right;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1;
+            color: inherit;
+            opacity: 0.5;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 10px;
+        }
+
+        .alert-close:hover {
+            opacity: 1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            color: #333;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .login-container p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            color: #555;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+        }
+
+        .input-group input.error {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+
+        .options a {
+            color: #007bff;
+            text-decoration: none;
+            transition: text-decoration 0.3s;
+        }
+
+        .options a:hover {
+            text-decoration: underline;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+
+        .login-button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .signup-link {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .signup-link a {
+            color: #007bff;
+            font-weight: 600;
+            text-decoration: none;
+            transition: text-decoration 0.3s;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Bem-vindo(a) de volta!</h1>
+    <p>Por favor, insira seus dados para continuar</p>
+
+    <div th:if="${session.SPRING_SECURITY_LAST_EXCEPTION != null}" class="alert alert-danger">
+        <span class="alert-icon">⚠️</span>
+        <span th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}">Erro de autenticação</span>
+        <button type="button" class="alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+
+    <div th:if="${param.error != null}" class="alert alert-danger">
+        <span class="alert-icon">⚠️</span>
+        <span>Email ou senha incorretos. Tente novamente.</span>
+        <button type="button" class="alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+
+    <div th:if="${param.logout != null}" class="alert alert-success">
+        <span class="alert-icon">✅</span>
+        <span>Você foi desconectado com sucesso.</span>
+        <button type="button" class="alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+
+    <div th:if="${param.accessDenied != null}" class="alert alert-danger">
+        <span class="alert-icon">🚫</span>
+        <span>Acesso negado. Você não tem permissão para acessar esta página.</span>
+        <button type="button" class="alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+
+    <form th:action="@{/login}" method="POST" id="loginForm">
+        <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Sua senha" required>
+        </div>
+
+        <button type="submit" class="login-button" id="loginButton">Entrar</button>
+
+        <div class="signup-link">
+            Não tem uma conta? <a href="/registro">Cadastre-se</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const alerts = document.querySelectorAll('.alert');
+        alerts.forEach(function(alert) {
+            setTimeout(function() {
+                if (alert.style.display !== 'none') {
+                    alert.style.opacity = '0';
+                    setTimeout(function() {
+                        alert.style.display = 'none';
+                    }, 300);
+                }
+            }, 5000);
+        });
+
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const loginButton = document.getElementById('loginButton');
+
+        form.addEventListener('submit', function(e) {
+            let hasError = false;
+
+            emailInput.classList.remove('error');
+            passwordInput.classList.remove('error');
+
+            if (!emailInput.value.trim()) {
+                emailInput.classList.add('error');
+                hasError = true;
+            } else if (!isValidEmail(emailInput.value)) {
+                emailInput.classList.add('error');
+                hasError = true;
+            }
+
+            if (!passwordInput.value.trim()) {
+                passwordInput.classList.add('error');
+                hasError = true;
+            }
+
+            if (hasError) {
+                e.preventDefault();
+                showCustomError('Por favor, preencha todos os campos corretamente.');
+            }
+        });
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showCustomError(message) {
+            const existingAlerts = document.querySelectorAll('.alert');
+            existingAlerts.forEach(alert => alert.remove());
+
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-danger';
+            alertDiv.innerHTML = `
+                <span class="alert-icon">⚠️</span>
+                <span>${message}</span>
+                <button type="button" class="alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+            `;
+
+            const form = document.getElementById('loginForm');
+            form.parentNode.insertBefore(alertDiv, form);
+
+            setTimeout(function() {
+                if (alertDiv.style.display !== 'none') {
+                    alertDiv.style.opacity = '0';
+                    setTimeout(function() {
+                        alertDiv.style.display = 'none';
+                    }, 300);
+                }
+            }, 5000);
+        }
+    });
+</script>
+
+</body>
+</html>
