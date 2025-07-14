@@ -11,25 +11,25 @@ import java.util.Optional;
 @Service
 public class ServiceMovie {
 
-    private RepositoryMovie repositoryMovie;
+    private static RepositoryMovie repositoryMovie = null;
     public ServiceMovie(RepositoryMovie repositoryMovie) {
         this.repositoryMovie = repositoryMovie;
     }
 
     //Listagem
-    public List<Movie> listMovies() {
+    public static List<Movie> listMovies() {
         return repositoryMovie.findAll();
     }
 
     //Procurar no banco
-    public Movie searchId(Long id) {
+    public static Movie searchId(Long id) {
         return repositoryMovie.findById(id)
                 .orElseThrow(() -> new NotFoundResource("Filme de id " + id + " não encontrado!"));
     }
 
     //Adicionar no banco
-    public Movie saveMovie(String nome, String diretor, int lancamento, String genero, String classificacao, double preco) {
-        Movie movie = new Movie(nome, diretor, lancamento, genero, classificacao, preco);
+    public Movie saveMovie(String nome, String diretor, int lancamento, String genero, String classificacao, double preco, String imagem) {
+        Movie movie = new Movie(nome, diretor, lancamento, genero, classificacao, preco, imagem);
         return repositoryMovie.save(movie);
     }
 

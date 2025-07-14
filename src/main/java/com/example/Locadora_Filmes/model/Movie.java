@@ -16,6 +16,9 @@ public class Movie {
     private String classificacao;
     private double preco;
 
+    @Column(length = 1000)
+    private String imagem;
+
     public Movie() {}
 
     public long getId() {
@@ -24,6 +27,14 @@ public class Movie {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
 
     public String getNome() {
@@ -74,14 +85,14 @@ public class Movie {
         this.preco = preco;
     }
 
-    public Movie(String nome, String diretor, int lancamento, String genero, String classificacao, double preco){
+    public Movie(String nome, String diretor, int lancamento, String genero, String classificacao, double preco, String imagem){
         this.nome = nome;
         this.diretor = diretor;
         this.lancamento = lancamento;
         this.genero = genero;
         this.classificacao = classificacao;
         this.preco = preco;
-
+        this.imagem = imagem;
 
     }
 }

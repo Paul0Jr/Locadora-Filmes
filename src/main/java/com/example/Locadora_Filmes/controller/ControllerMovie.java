@@ -2,14 +2,22 @@ package com.example.Locadora_Filmes.controller;
 
 import org.springframework.ui.Model;
 import com.example.Locadora_Filmes.model.Movie;
-import com.example.Locadora_Filmes.repository.RepositoryMovie;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.UUID;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.example.Locadora_Filmes.service.ServiceMovie;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ControllerMovie {
+
+    private static final String UPLOAD_DIR = "src/main/resources/static/uploads/";
 
     @GetMapping("/filmes")
     public String filmes(Model model) {
@@ -30,8 +38,67 @@ public class ControllerMovie {
                            @RequestParam int lancamento,
                            @RequestParam String genero,
                            @RequestParam String classificacao,
-                           @RequestParam double preco) {
-        Movie movie = serviceMovie.saveMovie(nome, diretor, lancamento, genero, classificacao, preco);
+                           @RequestParam double preco,
+                           @RequestParam("imagemFile") MultipartFile imagemFile,
+                           RedirectAttributes redirectAttributes) {
+
+        if (imagemFile.isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "Por favor, selecione um arquivo de imagem.");
+            return "redirect:/filmes";
+        }
+
+        // Validar tipo de arquivo
+        String originalFilename = imagemFile.getOriginalFilename();
+        if (originalFilename == null || originalFilename.isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "Nome do arquivo inválido.");
+            return "redirect:/filmes";
+        }
+
+        String contentType = imagemFile.getContentType();
+        if (contentType == null || !contentType.startsWith("image/")) {
+            redirectAttributes.addFlashAttribute("error", "Por favor, selecione apenas arquivos de imagem (JPG, PNG, GIF, etc.).");
+            return "redirect:/filmes";
+        }
+
+        try {
+            // Gera um nome de arquivo único para evitar conflitos
+            String fileExtension = originalFilename.substring(originalFilename.lastIndexOf(".")).toLowerCase();
+            
+            // Validar extensão
+            if (!fileExtension.matches("\\.(jpg|jpeg|png|gif|bmp|webp)$")) {
+                redirectAttributes.addFlashAttribute("error", "Formato de imagem não suportado. Use JPG, PNG, GIF, BMP ou WebP.");
+                return "redirect:/filmes";
+            }
+            
+            String uniqueFilename = UUID.randomUUID().toString() + fileExtension;
+
+            Path uploadPath = Paths.get(UPLOAD_DIR);
+            if (!Files.exists(uploadPath)) {
+                Files.createDirectories(uploadPath);
+            }
+
+            Path filePath = uploadPath.resolve(uniqueFilename);
+            Files.write(filePath, imagemFile.getBytes());
+
+            // Salva o caminho relativo da imagem
+            String urlImagem = "/uploads/" + uniqueFilename;
+
+            System.out.println("=== DEBUG UPLOAD ===");
+            System.out.println("Nome original: " + originalFilename);
+            System.out.println("Tipo de conteúdo: " + contentType);
+            System.out.println("Extensão: " + fileExtension);
+            System.out.println("Nome único: " + uniqueFilename);
+            System.out.println("Caminho salvo: " + urlImagem);
+            System.out.println("Arquivo salvo em: " + filePath.toAbsolutePath());
+            System.out.println("===================");
+
+            serviceMovie.saveMovie(nome, diretor, lancamento, genero, classificacao, preco, urlImagem);
+            redirectAttributes.addFlashAttribute("success", "Filme adicionado com sucesso!");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            redirectAttributes.addFlashAttribute("error", "Ocorreu um erro ao fazer o upload da imagem: " + e.getMessage());
+        }
         return "redirect:/filmes";
     }
 

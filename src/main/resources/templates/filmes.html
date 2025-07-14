@@ -60,6 +60,7 @@
             align-items: center;
             justify-content: center;
             transition: background-color 0.3s;
+            z-index: 2;
         }
 
         .delete-btn:hover {
@@ -77,6 +78,8 @@
             display: block;
             cursor: pointer;
             transition: transform 0.3s;
+            position: relative;
+            z-index: 1;
         }
 
         .movie-card:hover img {
@@ -204,11 +207,8 @@
             <button class="delete-btn" th:data-id="${movie.id}" th:data-nome="${movie.nome}">
                 <span class="delete-btn-icon">🗑️</span>
             </button>
+            <img th:src="@{${movie.imagem}}" alt="Pôster do Filme" class="movie-poster">
             <h3 th:text="${movie.nome}">Nome do Filme</h3>
-
-            <div class="movie-lancamento">
-                <p th:text="${movie.lancamento}">Ano de Lançamento do filme</p>
-            </div>
         </div>
     </div>
 </div>
@@ -216,7 +216,12 @@
 <div id="addMovieModal" class="modal-overlay">
     <div class="modal-content">
         <h2>Adicionar Novo Filme</h2>
-        <form th:action="@{/filmes/adicionar}" method="post">
+        <form th:action="@{/filmes/adicionar}" method="post" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="imagemFile">Imagem (Pôster)</label>
+                <input type="file" id="imagemFile" name="imagemFile" accept="image/*" required>
+            </div>
+
             <div class="input-group">
                 <label for="nome">Título do Filme</label>
                 <input type="text" id="nome" name="nome" required>
@@ -250,11 +255,6 @@
             <div class="input-group">
                 <label for="preco">Preço</label>
                 <input type="text" id="preco" name="preco" required>
-            </div>
-
-            <div class="input-group">
-                <label for="urlImagem">URL da Imagem (Pôster)</label>
-                <input type="url" id="urlImagem" name="urlImagem" required>
             </div>
 
             <div class="modal-actions">
