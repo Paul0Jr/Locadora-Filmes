@@ -28,8 +28,8 @@ public class ServiceMovie {
     }
 
     //Adicionar no banco
-    public Movie saveMovie(String nome, String diretor, int lancamento, String genero, String classificacao, double preco, String imagem) {
-        Movie movie = new Movie(nome, diretor, lancamento, genero, classificacao, preco, imagem);
+    public Movie saveMovie(String nome, String diretor, int lancamento, String genero, String classificacao, double preco, String imagem, String descricao) {
+        Movie movie = new Movie(nome, diretor, lancamento, genero, classificacao, preco, imagem, descricao);
         return repositoryMovie.save(movie);
     }
 

@@ -17,6 +17,17 @@ public class Movie {
     private double preco;
 
     @Column(length = 1000)
+    private String descricao;
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    @Column(length = 1000)
     private String imagem;
 
     public Movie() {}
@@ -85,7 +96,7 @@ public class Movie {
         this.preco = preco;
     }
 
-    public Movie(String nome, String diretor, int lancamento, String genero, String classificacao, double preco, String imagem){
+    public Movie(String nome, String diretor, int lancamento, String genero, String classificacao, double preco, String imagem, String descricao){
         this.nome = nome;
         this.diretor = diretor;
         this.lancamento = lancamento;
@@ -93,6 +104,7 @@ public class Movie {
         this.classificacao = classificacao;
         this.preco = preco;
         this.imagem = imagem;
+        this.descricao = descricao;
 
     }
 }

@@ -39,6 +39,7 @@ public class ControllerMovie {
                            @RequestParam String genero,
                            @RequestParam String classificacao,
                            @RequestParam double preco,
+                           @RequestParam String descricao,
                            @RequestParam("imagemFile") MultipartFile imagemFile,
                            RedirectAttributes redirectAttributes) {
 
@@ -63,8 +64,7 @@ public class ControllerMovie {
         try {
             // Gera um nome de arquivo único para evitar conflitos
             String fileExtension = originalFilename.substring(originalFilename.lastIndexOf(".")).toLowerCase();
-            
-            // Validar extensão
+
             if (!fileExtension.matches("\\.(jpg|jpeg|png|gif|bmp|webp)$")) {
                 redirectAttributes.addFlashAttribute("error", "Formato de imagem não suportado. Use JPG, PNG, GIF, BMP ou WebP.");
                 return "redirect:/filmes";
@@ -92,7 +92,7 @@ public class ControllerMovie {
             System.out.println("Arquivo salvo em: " + filePath.toAbsolutePath());
             System.out.println("===================");
 
-            serviceMovie.saveMovie(nome, diretor, lancamento, genero, classificacao, preco, urlImagem);
+            serviceMovie.saveMovie(nome, diretor, lancamento, genero, classificacao, preco, urlImagem, descricao);
             redirectAttributes.addFlashAttribute("success", "Filme adicionado com sucesso!");
 
         } catch (IOException e) {
