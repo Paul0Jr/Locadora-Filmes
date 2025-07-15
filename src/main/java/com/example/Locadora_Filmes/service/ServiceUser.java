@@ -1,6 +1,7 @@
 package com.example.Locadora_Filmes.service;
 
 import com.example.Locadora_Filmes.exceptions.NotFoundResource;
+import com.example.Locadora_Filmes.model.Movie;
 import com.example.Locadora_Filmes.model.User;
 import com.example.Locadora_Filmes.repository.RepositoryUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 @Service
 public class ServiceUser {
-    private final RepositoryUser repositoryUser;
+    private static RepositoryUser repositoryUser = null;
     private final PasswordEncoder passwordEncoder;
 
     public ServiceUser(RepositoryUser repositoryUser, PasswordEncoder passwordEncoder) {
@@ -47,9 +48,9 @@ public class ServiceUser {
 
         // Criptografar senha
         String passwordEncrypt = passwordEncoder.encode(password);
-        
+
         // Criar usuário
-        User user = new User(name.trim(), email.trim().toLowerCase(), passwordEncrypt);
+        User user = new User(name.trim(), email.trim().toLowerCase(), passwordEncrypt, "ROLE_USER");
         return repositoryUser.save(user);
     }
 
@@ -57,8 +58,29 @@ public class ServiceUser {
         return repositoryUser.findByEmail(email);
     }
 
+    public static User searchId(Long id) {
+        return repositoryUser.findById(id)
+                .orElseThrow(() -> new NotFoundResource("Usuário de id " + id + " não encontrado!"));
+    }
+
     public boolean validatePassword(String rawPassword, String encodedPassword) {
         return passwordEncoder.matches(rawPassword, encodedPassword);
+    }
+
+    //Atualizar no banco
+    public User updateUser(Long id, String name, String email, String role) {
+        User user = searchId(id);
+        user.setName(name);
+        user.setEmail(email);
+        user.setRole(role);
+        return repositoryUser.save(user);
+    }
+
+    public void deleteUser(Long id) {
+        if (!repositoryUser.existsById(id)) {
+            throw new NotFoundResource("Usuário com id " + id + " inexistente!");
+        }
+        repositoryUser.deleteById(id);
     }
 
     public List<User> getAllUsers() {

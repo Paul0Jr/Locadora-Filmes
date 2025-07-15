@@ -21,7 +21,7 @@ public class ControllerMovie {
 
     @GetMapping("/filmes")
     public String filmes(Model model) {
-       model.addAttribute("filmes", serviceMovie.listMovies());
+       model.addAttribute("filmes", ServiceMovie.listMovies());
         return "filmes";
     }
 

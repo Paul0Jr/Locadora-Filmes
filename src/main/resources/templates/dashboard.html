@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    
+
     <style>
         * {
             margin: 0;
@@ -23,7 +23,7 @@
         .header {
             background-color: #ffffff;
             padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,6 +49,22 @@
 
         .logout-btn:hover {
             background-color: #c82333;
+        }
+
+        .painel-btn {
+            background-color: #181fdb;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .painel-btn:hover {
+            background-color: #0c1299;
         }
 
         .container {
@@ -117,46 +133,50 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>🎬 Locadora de Filmes</h1>
+<header class="header">
+    <h1>🎬 Locadora de Filmes</h1>
+    <div>
+        <div sec:authorize="hasRole('ROLE_ADMIN')" style="display: inline;">
+            <a href="/admin" class="painel-btn">Painel Admin</a>
+        </div>
         <form th:action="@{/logout}" method="post" style="display: inline;">
             <button type="submit" class="logout-btn">Sair</button>
         </form>
-    </header>
+    </div>
+</header>
 
-    <div class="container">
-        <div class="welcome-card">
-            <h2>Bem-vindo à Locadora de Filmes!</h2>
-            <p>Você foi autenticado com sucesso. Agora você pode acessar todas as funcionalidades da locadora de filmes.</p>
-        </div>
+<div class="container">
+    <div class="welcome-card">
+        <h2>Bem-vindo à Locadora de Filmes!</h2>
+    </div>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <a href="/filmes">
+    <div class="features-grid">
+        <div class="feature-card">
+            <a href="/filmes">
                 <div class="feature-icon">📽️</div>
                 <h3>Gerenciar Filmes</h3>
                 <p>Adicione, edite e remova filmes do catálogo da locadora.</p>
-                </a>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>Gerenciar Clientes</h3>
-                <p>(A implementar) Cadastre e gerencie informações dos clientes da locadora.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📋</div>
-                <h3>Controle de Locações</h3>
-                <p>(A implementar) Registre e acompanhe as locações de filmes pelos clientes.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Relatórios</h3>
-                <p>(A implementar) Visualize relatórios e estatísticas da locadora.</p>
-            </div>
+            </a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h3>Gerenciar Clientes</h3>
+            <p>(A implementar)</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h3>Controle de Locações</h3>
+            <p>(A implementar)</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Relatórios</h3>
+            <p>(A implementar)</p>
         </div>
     </div>
+</div>
 </body>
 </html> 

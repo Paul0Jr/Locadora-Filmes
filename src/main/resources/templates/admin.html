@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Usuários</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; }
+        .header { background-color: #ffffff; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
+        .header h1 { color: #333; font-size: 1.5rem; font-weight: 600; }
+        .header a { color: #007bff; text-decoration: none; font-weight: 500; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        .user-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .user-card { background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); overflow: hidden; position: relative; }
+        .delete-btn { position: absolute; top: 10px; right: 10px; background: rgba(255, 255, 255, 0.8); border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s; z-index: 2; }
+        .delete-btn:hover { background: #f1f1f1; }
+        .delete-btn-icon { color: #333; font-size: 16px; }
+        .edit-btn { position: absolute; top: 10px; left: 10px; background: rgba(0, 0, 0, 0.05); border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s; z-index: 2; }
+        .edit-btn:hover { background: #e2e6ea; }
+        .edit-btn-icon { color: #333; font-size: 16px; }
+        .user-card h3 { padding: 1rem; font-size: 1.2rem; color: #333; text-align: center; cursor: pointer; }
+        .user-card p { color: #666; text-align: center; margin-bottom: 1rem; }
+        .user-icon { font-size: 3rem; margin: 1.5rem auto 0.5rem auto; color: #007bff; text-align: center; display: block; }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 500px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .modal-content h2 { margin-bottom: 1.5rem; text-align: center; }
+        .modal-actions { margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 1rem; }
+        .btn { padding: 0.75rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-weight: 500; }
+        .btn-primary { background-color: #007bff; color: white; }
+        .btn-secondary { background-color: #6c757d; color: white; }
+        .btn-danger { background-color: #dc3545; color: white; }
+        .close-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666; }
+        .input-group { margin-bottom: 1rem; }
+        .input-group label { margin-bottom: 0.5rem; display: block; }
+        .input-group input, .input-group select { width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px; font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1>👥 Painel de Usuários</h1>
+    <a href="/dashboard">Voltar para o Dashboard</a>
+</header>
+<div class="container">
+    <div class="user-grid">
+        <div class="user-card" th:each="user : ${user}">
+            <button class="edit-btn" title="Editar" type="button" th:data-id="${user.id}"><span class="edit-btn-icon">✏️</span></button>
+            <button class="delete-btn" title="Excluir" type="button" th:data-id="${user.id}" th:data-nome="${user.name}"><span class="delete-btn-icon">🗑️</span></button>
+            <span class="user-icon">👤</span>
+            <h3 th:text="${user.name}">Nome do Usuário</h3>
+            <p th:text="${user.email}">email@exemplo.com</p>
+            <p th:text="${user.role}">Função</p>
+        </div>
+    </div>
+</div>
+<!-- Modal de edição de usuário -->
+<div id="editUserModal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('editUserModal')">&times;</button>
+        <h2>Editar Usuário</h2>
+        <form id="editUserForm" method="post">
+            <div class="input-group">
+                <label for="editName">Nome</label>
+                <input type="text" id="editName" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="editEmail">Email</label>
+                <input type="email" id="editEmail" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="editRole">Função (Role)</label>
+                <select id="editRole" name="role" required>
+                    <option value="ROLE_USER">Usuário</option>
+                    <option value="ROLE_ADMIN">Admin</option>
+                </select>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeModal('editUserModal')">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Modal de exclusão de usuário -->
+<div id="deleteUserModal" class="modal-overlay">
+    <div class="modal-content">
+        <h2>Confirmar Exclusão</h2>
+        <p>Você tem certeza que deseja excluir o usuário "<span id="userNameToDelete"></span>"?</p>
+        <div class="modal-actions">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('deleteUserModal')">Cancelar</button>
+            <form id="deleteForm" method="post">
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'flex';
+}
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const userId = this.dataset.id;
+            document.getElementById('userNameToDelete').textContent = this.dataset.nome;
+            document.getElementById('deleteForm').action = `/admin/deletar/${userId}`;
+            openModal('deleteUserModal');
+        });
+    });
+    document.querySelectorAll('.edit-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const userId = this.dataset.id;
+            fetch(`/admin/usuario/${userId}`)
+                .then(response => response.json())
+                .then(user => {
+                    document.getElementById('editName').value = user.name;
+                    document.getElementById('editEmail').value = user.email;
+                    document.getElementById('editRole').value = user.role;
+                    document.getElementById('editUserForm').action = `/admin/usuario/atualizar/${userId}`;
+                    openModal('editUserModal');
+                });
+        });
+    });
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal-overlay')) {
+            event.target.style.display = "none";
+        }
+    }
+});
+</script>
+</body>
+</html>

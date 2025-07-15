@@ -1,4 +1,4 @@
-package com.example.Locadora_Filmes;
+package com.example.Locadora_Filmes.security;
 
 import com.example.Locadora_Filmes.service.CustomUserDetailsService;
 import org.slf4j.Logger;
@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.thymeleaf.extras.springsecurity6.dialect.SpringSecurityDialect;
 
 @Configuration
 @EnableWebSecurity
@@ -27,15 +28,22 @@ public class SecurityConfig {
     }
 
     @Bean
+    public SpringSecurityDialect springSecurityDialect() {
+        return new SpringSecurityDialect();
+    }
+
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         logger.info("Configurando Spring Security...");
         
         http
                 .csrf(csrf -> csrf.disable())
+
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/usuarios").hasRole("ADMIN")
                         .requestMatchers("/css/**", "/js/**", "/images/**", "/uploads/**").permitAll()
-                        .requestMatchers("/login", "/registro", "/register", "/simple-login").permitAll()
-                        .requestMatchers("/api/test/**", "/api/debug/**", "/api/test-login/**").permitAll()
+                        .requestMatchers("/login", "/registro", "/register").permitAll()
+                        //.requestMatchers("/api/test/**", "/api/debug/**", "/api/test-login/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
@@ -102,5 +110,3 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 }
-
-
