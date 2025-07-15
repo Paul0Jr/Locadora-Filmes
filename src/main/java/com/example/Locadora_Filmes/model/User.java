@@ -17,6 +17,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private String role = "ROLE_USER";
+
     public User() {
     }
 
@@ -52,9 +55,25 @@ public class User {
         this.password = password;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.role = "ROLE_USER"; // Valor padrão
+    }
+
+    public User(String name, String email, String password, String role) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.role = role;
     }
 }

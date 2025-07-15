@@ -29,6 +29,12 @@ public class ServiceMovie {
 
     //Adicionar no banco
     public Movie saveMovie(String nome, String diretor, int lancamento, String genero, String classificacao, double preco, String imagem, String descricao) {
+        // Verificar se já existe um filme com o mesmo nome e ano
+        Optional<Movie> existingMovie = repositoryMovie.findByNomeAndLancamento(nome.trim(), lancamento);
+        if (existingMovie.isPresent()) {
+            throw new RuntimeException("Já existe um filme com o nome '" + nome + "' lançado em " + lancamento + ".");
+        }
+        
         Movie movie = new Movie(nome, diretor, lancamento, genero, classificacao, preco, imagem, descricao);
         return repositoryMovie.save(movie);
     }
@@ -36,6 +42,13 @@ public class ServiceMovie {
     //Atualizar no banco
     public Movie updateMovie(Long id, String nome, String diretor, int lancamento, String genero, String classificacao, double preco, String imagem) {
         Movie movie = searchId(id);
+        
+        // Verificar se já existe outro filme com o mesmo nome e ano (excluindo o filme atual)
+        Optional<Movie> existingMovie = repositoryMovie.findByNomeAndLancamento(nome.trim(), lancamento);
+        if (existingMovie.isPresent() && existingMovie.get().getId() != id) {
+            throw new RuntimeException("Já existe um filme com o nome '" + nome + "' lançado em " + lancamento + ".");
+        }
+
         movie.setNome(nome);
         movie.setDiretor(diretor);
         movie.setLancamento(lancamento);

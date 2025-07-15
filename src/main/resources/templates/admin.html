@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .header {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .header a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+
+        .user-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .user-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .user-card h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .user-card p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .user-role {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            color: #333;
+        }
+
+        .action-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .edit-btn, .delete-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.25rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .edit-btn:hover {
+            background-color: #e9ecef;
+        }
+
+        .delete-btn:hover {
+            background-color: #f8d7da;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .modal-content .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .modal-content .input-group label {
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .modal-content .input-group input,
+        .modal-content .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .modal-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>👥 Painel Administrativo</h1>
+        <a href="/dashboard">Voltar para o Menu</a>
+    </header>
+
+    <div class="container">
+        <!-- Mensagens de alerta -->
+        <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+        <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+        <div class="user-grid">
+            <div class="user-card" th:each="usuario : ${usuarios}">
+                <div class="action-buttons">
+                    <button class="edit-btn" th:data-id="${usuario.id}" th:data-name="${usuario.name}" th:data-email="${usuario.email}" th:data-role="${usuario.role}">✏️</button>
+                    <button class="delete-btn" th:data-id="${usuario.id}" th:data-name="${usuario.name}" th:if="${usuario.email != currentUser}">🗑️</button>
+                </div>
+                <h3 th:text="${usuario.name}">Nome do Usuário</h3>
+                <p th:text="${usuario.email}">email@exemplo.com</p>
+                <span class="user-role" th:text="${usuario.role == 'ROLE_ADMIN' ? 'Administrador' : 'Usuário'}">Role</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Edição -->
+    <div id="editUserModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Editar Usuário</h2>
+            <form id="editUserForm" method="post">
+                <div class="input-group">
+                    <label for="editName">Nome</label>
+                    <input type="text" id="editName" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="editEmail">Email</label>
+                    <input type="email" id="editEmail" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="editRole">Role</label>
+                    <select id="editRole" name="role" required>
+                        <option value="ROLE_USER">Usuário</option>
+                        <option value="ROLE_ADMIN">Administrador</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelEditBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação de Exclusão -->
+    <div id="deleteUserModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Confirmar Exclusão</h2>
+            <p>Você tem certeza que deseja excluir o usuário "<span id="userNameToDelete"></span>"?</p>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancelar</button>
+                <form id="deleteUserForm" method="post">
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-hide alerts after 5 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                setTimeout(function() {
+                    if (alert.style.display !== 'none') {
+                        alert.style.opacity = '0';
+                        setTimeout(function() {
+                            alert.style.display = 'none';
+                        }, 300);
+                    }
+                }, 5000);
+            });
+        });
+
+        // Modal de Edição
+        const editModal = document.getElementById('editUserModal');
+        const editForm = document.getElementById('editUserForm');
+        const editNameInput = document.getElementById('editName');
+        const editEmailInput = document.getElementById('editEmail');
+        const editRoleSelect = document.getElementById('editRole');
+        const cancelEditBtn = document.getElementById('cancelEditBtn');
+
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                const name = this.getAttribute('data-name');
+                const email = this.getAttribute('data-email');
+                const role = this.getAttribute('data-role'); // Assuming data-role is added to the button
+                
+                editForm.action = `/admin/usuario/atualizar/${id}`;
+                editNameInput.value = name;
+                editEmailInput.value = email;
+                editRoleSelect.value = role; // Set the role in the select input
+                editModal.style.display = 'flex';
+            });
+        });
+
+        cancelEditBtn.addEventListener('click', function() {
+            editModal.style.display = 'none';
+        });
+
+        // Modal de Exclusão
+        const deleteModal = document.getElementById('deleteUserModal');
+        const deleteForm = document.getElementById('deleteUserForm');
+        const userNameToDelete = document.getElementById('userNameToDelete');
+        const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
+
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                const name = this.getAttribute('data-name');
+                
+                deleteForm.action = `/admin/usuario/deletar/${id}`;
+                userNameToDelete.textContent = name;
+                deleteModal.style.display = 'flex';
+            });
+        });
+
+        cancelDeleteBtn.addEventListener('click', function() {
+            deleteModal.style.display = 'none';
+        });
+
+        // Fechar modais clicando fora
+        [editModal, deleteModal].forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

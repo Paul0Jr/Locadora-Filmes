@@ -48,8 +48,8 @@ public class ServiceUser {
         // Criptografar senha
         String passwordEncrypt = passwordEncoder.encode(password);
         
-        // Criar usuário
-        User user = new User(name.trim(), email.trim().toLowerCase(), passwordEncrypt);
+        // Criar usuário com role padrão
+        User user = new User(name.trim(), email.trim().toLowerCase(), passwordEncrypt, "ROLE_USER");
         return repositoryUser.save(user);
     }
 
@@ -63,5 +63,30 @@ public class ServiceUser {
 
     public List<User> getAllUsers() {
         return repositoryUser.findAll();
+    }
+
+    public void deleteUser(Long id) {
+        if (!repositoryUser.existsById(id)) {
+            throw new RuntimeException("Usuário com id " + id + " não encontrado!");
+        }
+        repositoryUser.deleteById(id);
+    }
+
+    public User updateUser(Long id, String name, String email, String role) {
+        User user = repositoryUser.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário com id " + id + " não encontrado!"));
+        
+        // Verificar se o email já existe (excluindo o usuário atual)
+        if (!email.equals(user.getEmail())) {
+            Optional<User> existingUser = repositoryUser.findByEmail(email);
+            if (existingUser.isPresent()) {
+                throw new RuntimeException("Email já está cadastrado: " + email);
+            }
+        }
+        
+        user.setName(name);
+        user.setEmail(email);
+        user.setRole(role);
+        return repositoryUser.save(user);
     }
 }

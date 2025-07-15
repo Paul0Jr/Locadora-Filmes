@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Filmes</title>
+    <title>Catálogo da YourMovies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,77 +45,26 @@
             flex-direction: column;
         }
 
-        {
-            position: absolute
-        ;
-            top: 10px
-        ;
-            right: 10px
-        ;
-            background: none
-        ;
-            border: none
-        ;
-            font-size: 1.5rem
-        ;
-            cursor: pointer
-        ;
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            transition: opacity 0.3s ease;
         }
 
-        {
-            max-height: 70vh
-        ;
-            overflow-y: auto
-        ;
-            margin-bottom: 20px
-        ;
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
         }
 
-        .modal-conteudo h2 {
-            margin-top: 0;
-        }
-
-        {
-            text-align: right
-        ;
-            border-top: 1px solid #eee
-        ;
-            padding-top: 15px
-        ;
-        }
-
-        button {
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-        }
-
-        {
-            background-color: #007bff
-        ;
-            color: white
-        ;
-        }
-
-        {
-            background-color: #28a745
-        ;
-            color: white
-        ;
-        }
-
-        {
-            width: 100%
-        ;
-            padding: 8px
-        ;
-            margin-bottom: 10px
-        ;
-            border: 1px solid #ccc
-        ;
-            border-radius: 4px
-        ;
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
         }
 
         * {
@@ -483,12 +432,15 @@
 </head>
 <body>
 <header class="header">
-    <h1>🎬 Catálogo de Filmes</h1>
+    <h1>🎬 Catálogo da YourMovies</h1>
     <button id="addMovieBtn" class="action-btn">Adicionar Filme</button>
     <a href="/dashboard">Voltar para o Menu</a>
 </header>
 
 <div class="container">
+    <!-- Mensagens de alerta -->
+    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+    <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
     <div class="movie-grid">
         <div class="movie-card" th:each="movie : ${filmes}">
             <button class="delete-btn" th:data-id="${movie.id}" th:data-nome="${movie.nome}">
@@ -666,6 +618,19 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // Auto-hide alerts after 5 seconds
+        const alerts = document.querySelectorAll('.alert');
+        alerts.forEach(function(alert) {
+            setTimeout(function() {
+                if (alert.style.display !== 'none') {
+                    alert.style.opacity = '0';
+                    setTimeout(function() {
+                        alert.style.display = 'none';
+                    }, 300);
+                }
+            }, 5000);
+        });
+
         const movieGrid = document.querySelector('.movie-grid');
         const addMovieBtn = document.getElementById('addMovieBtn');
         const addMovieModal = document.getElementById('addMovieModal');
@@ -780,23 +745,23 @@
         function saveMovieChanges() {
             const formData = new FormData(editMovieForm);
 
-            fetch(`/filmes/atualizar/${currentMovieId}`, {
+            fetch(`/filmes/atualizar-ajax/${currentMovieId}`, {
                 method: 'POST',
                 body: formData
             })
-                .then(response => {
-                    if (response.ok) {
-                        alert('Filme atualizado com sucesso!');
-                        movieDetailsModal.style.display = 'none';
-                        resetEditMode();
-                        window.location.reload();
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Sucesso - redirecionar para a página de filmes
+                        window.location.href = '/filmes?success=true';
                     } else {
-                        throw new Error('Erro ao atualizar filme');
+                        // Erro - mostrar mensagem específica
+                        window.location.href = `/filmes?error=${encodeURIComponent(data.message)}`;
                     }
                 })
                 .catch(error => {
                     console.error('Erro ao salvar alterações:', error);
-                    alert('Erro ao salvar alterações do filme');
+                    window.location.href = '/filmes?error=Erro interno ao atualizar filme';
                 });
         }
 

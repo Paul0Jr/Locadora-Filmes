@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -118,17 +118,19 @@
 </head>
 <body>
     <header class="header">
-        <h1>🎬 Locadora de Filmes</h1>
-        <form th:action="@{/logout}" method="post" style="display: inline;">
-            <button type="submit" class="logout-btn">Sair</button>
-        </form>
+        <h1>🎬 YourMovies</h1>
+        <div>
+            <a sec:authorize="hasRole('ROLE_ADMIN')" href="/admin" class="logout-btn" style="background-color:#007bff; margin-right: 10px;">Admin</a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" class="logout-btn">Sair</button>
+            </form>
+        </div>
     </header>
 
     <div class="container">
         <div class="welcome-card">
-            <h2>Bem-vindo à Locadora de Filmes!</h2>
-            <p>Você foi autenticado com sucesso. Agora você pode acessar todas as funcionalidades da locadora de filmes.</p>
-        </div>
+            <h2>Bem-vindo à YourMovies!</h2>
+           </div>
 
         <div class="features-grid">
             <div class="feature-card">
@@ -142,19 +144,19 @@
             <div class="feature-card">
                 <div class="feature-icon">👥</div>
                 <h3>Gerenciar Clientes</h3>
-                <p>(A implementar) Cadastre e gerencie informações dos clientes da locadora.</p>
+                <p>(A implementar)</p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">📋</div>
                 <h3>Controle de Locações</h3>
-                <p>(A implementar) Registre e acompanhe as locações de filmes pelos clientes.</p>
+                <p>(A implementar)</p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
                 <h3>Relatórios</h3>
-                <p>(A implementar) Visualize relatórios e estatísticas da locadora.</p>
+                <p>(A implementar)</p>
             </div>
         </div>
     </div>
