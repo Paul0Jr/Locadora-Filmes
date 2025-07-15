@@ -17,16 +17,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    private String role;
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public User() {
     }
 
@@ -66,13 +56,5 @@ public class User {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.role = "ROLE_USER";
-    }
-
-    public User(String name, String email, String password, String role) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.role = role;
     }
 }
