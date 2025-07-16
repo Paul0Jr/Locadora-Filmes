@@ -43,7 +43,7 @@ public class ServiceMovie {
     public Movie updateMovie(Long id, String nome, String diretor, int lancamento, String genero, String classificacao, double preco, String imagem) {
         Movie movie = searchId(id);
         
-        // Verificar se já existe outro filme com o mesmo nome e ano (excluindo o filme atual)
+        // Verificar se já existe outro filme com o mesmo nome e ano
         Optional<Movie> existingMovie = repositoryMovie.findByNomeAndLancamento(nome.trim(), lancamento);
         if (existingMovie.isPresent() && existingMovie.get().getId() != id) {
             throw new RuntimeException("Já existe um filme com o nome '" + nome + "' lançado em " + lancamento + ".");

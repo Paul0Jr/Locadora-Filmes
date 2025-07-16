@@ -4262,3 +4262,754 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2025-07-15 21:10:06 - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-07-15 21:10:06 - HikariPool-1 - Shutdown initiated...
 2025-07-15 21:10:06 - HikariPool-1 - Shutdown completed.
+2025-07-15 21:21:09 - Starting LocadoraFilmesApplication using Java 24.0.1 with PID 2968 (C:\Users\extre\Documents\Locadora-Filmes\target\classes started by extre in C:\Users\extre\Documents\Locadora-Filmes)
+2025-07-15 21:21:09 - Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-07-15 21:21:09 - No active profile set, falling back to 1 default profile: "default"
+2025-07-15 21:21:09 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-15 21:21:09 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-15 21:21:12 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-15 21:21:12 - Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
+2025-07-15 21:21:13 - Tomcat initialized with port 8080 (http)
+2025-07-15 21:21:13 - Starting service [Tomcat]
+2025-07-15 21:21:13 - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-15 21:21:13 - Initializing Spring embedded WebApplicationContext
+2025-07-15 21:21:13 - Root WebApplicationContext: initialization completed in 3764 ms
+2025-07-15 21:21:13 - HikariPool-1 - Starting...
+2025-07-15 21:21:14 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@14b4c8c8
+2025-07-15 21:21:14 - HikariPool-1 - Start completed.
+2025-07-15 21:21:14 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-15 21:21:14 - HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-07-15 21:21:15 - HHH000026: Second-level cache disabled
+2025-07-15 21:21:16 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-15 21:21:16 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-15 21:21:16 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-15 21:21:17 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-15 21:21:17 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15 21:21:18 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-15 21:21:19 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-15 21:21:19 - Configurando DaoAuthenticationProvider...
+2025-07-15 21:21:19 - DaoAuthenticationProvider configurado
+2025-07-15 21:21:19 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-15 21:21:19 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-15 21:21:19 - Configurando Spring Security...
+2025-07-15 21:21:19 - Spring Security configurado com sucesso
+2025-07-15 21:21:19 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-07-15 21:21:20 - LiveReload server is running on port 35729
+2025-07-15 21:21:20 - Tomcat started on port 8080 (http) with context path '/'
+2025-07-15 21:21:21 - Started LocadoraFilmesApplication in 12.414 seconds (process running for 13.996)
+2025-07-15 21:21:26 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-15 21:21:26 - Initializing Servlet 'dispatcherServlet'
+2025-07-15 21:21:26 - Completed initialization in 2 ms
+2025-07-15 21:21:26 - Securing GET /login
+2025-07-15 21:21:26 - Secured GET /login
+2025-07-15 21:21:26 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:21:26 - Error parameter: null
+2025-07-15 21:21:26 - Logout parameter: null
+2025-07-15 21:21:26 - AccessDenied parameter: null
+2025-07-15 21:21:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:27 - Securing GET /favicon.ico
+2025-07-15 21:21:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:27 - Redirecting to http://localhost:8080/login
+2025-07-15 21:21:27 - Securing GET /login
+2025-07-15 21:21:27 - Secured GET /login
+2025-07-15 21:21:27 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:21:27 - Error parameter: null
+2025-07-15 21:21:27 - Logout parameter: null
+2025-07-15 21:21:27 - AccessDenied parameter: null
+2025-07-15 21:21:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:29 - Securing GET /registro
+2025-07-15 21:21:29 - Secured GET /registro
+2025-07-15 21:21:30 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:30 - Securing GET /favicon.ico
+2025-07-15 21:21:30 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:30 - Redirecting to http://localhost:8080/login
+2025-07-15 21:21:30 - Securing GET /login
+2025-07-15 21:21:30 - Secured GET /login
+2025-07-15 21:21:30 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:21:30 - Error parameter: null
+2025-07-15 21:21:30 - Logout parameter: null
+2025-07-15 21:21:30 - AccessDenied parameter: null
+2025-07-15 21:21:30 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:45 - Securing POST /register
+2025-07-15 21:21:45 - Secured POST /register
+2025-07-15 21:21:46 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:46 - Securing GET /login?success=true
+2025-07-15 21:21:46 - Secured GET /login?success=true
+2025-07-15 21:21:46 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:21:46 - Error parameter: null
+2025-07-15 21:21:46 - Logout parameter: null
+2025-07-15 21:21:46 - AccessDenied parameter: null
+2025-07-15 21:21:46 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:46 - Securing GET /favicon.ico
+2025-07-15 21:21:46 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:46 - Redirecting to http://localhost:8080/login
+2025-07-15 21:21:46 - Securing GET /login
+2025-07-15 21:21:46 - Secured GET /login
+2025-07-15 21:21:46 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:21:46 - Error parameter: null
+2025-07-15 21:21:46 - Logout parameter: null
+2025-07-15 21:21:46 - AccessDenied parameter: null
+2025-07-15 21:21:46 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:53 - Securing GET /registro
+2025-07-15 21:21:53 - Secured GET /registro
+2025-07-15 21:21:53 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:53 - Securing GET /favicon.ico
+2025-07-15 21:21:53 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:21:53 - Redirecting to http://localhost:8080/login
+2025-07-15 21:21:53 - Securing GET /login
+2025-07-15 21:21:53 - Secured GET /login
+2025-07-15 21:21:53 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:21:53 - Error parameter: null
+2025-07-15 21:21:53 - Logout parameter: null
+2025-07-15 21:21:53 - AccessDenied parameter: null
+2025-07-15 21:21:53 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:22:16 - Securing POST /register
+2025-07-15 21:22:16 - Secured POST /register
+2025-07-15 21:22:16 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:22:16 - Securing GET /registro?emailExists=true
+2025-07-15 21:22:16 - Secured GET /registro?emailExists=true
+2025-07-15 21:22:16 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:22:16 - Securing GET /favicon.ico
+2025-07-15 21:22:16 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:22:16 - Redirecting to http://localhost:8080/login
+2025-07-15 21:22:16 - Securing GET /login
+2025-07-15 21:22:16 - Secured GET /login
+2025-07-15 21:22:16 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:22:16 - Error parameter: null
+2025-07-15 21:22:16 - Logout parameter: null
+2025-07-15 21:22:16 - AccessDenied parameter: null
+2025-07-15 21:22:16 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:22:20 - Securing GET /login
+2025-07-15 21:22:20 - Secured GET /login
+2025-07-15 21:22:20 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:22:20 - Error parameter: null
+2025-07-15 21:22:20 - Logout parameter: null
+2025-07-15 21:22:20 - AccessDenied parameter: null
+2025-07-15 21:22:20 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:22:20 - Securing GET /favicon.ico
+2025-07-15 21:22:20 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:22:20 - Redirecting to http://localhost:8080/login
+2025-07-15 21:22:20 - Securing GET /login
+2025-07-15 21:22:20 - Secured GET /login
+2025-07-15 21:22:20 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:22:20 - Error parameter: null
+2025-07-15 21:22:20 - Logout parameter: null
+2025-07-15 21:22:20 - AccessDenied parameter: null
+2025-07-15 21:22:20 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:22:25 - Securing POST /login
+2025-07-15 21:22:25 - === CUSTOM USER DETAILS SERVICE ===
+2025-07-15 21:22:25 - Tentando carregar usuário com email: regis@ifce.com
+2025-07-15 21:22:25 - Usuário encontrado: Reginaldo (ID: 9)
+2025-07-15 21:22:25 - Senha do usuário (hash): $2a$10$fXilZqfCWd2/x...
+2025-07-15 21:22:25 - UserDetails criado com sucesso para: regis@ifce.com
+2025-07-15 21:22:25 - Authorities: [ROLE_USER]
+2025-07-15 21:22:25 - Account non-expired: true
+2025-07-15 21:22:25 - Account non-locked: true
+2025-07-15 21:22:25 - Credentials non-expired: true
+2025-07-15 21:22:25 - Enabled: true
+2025-07-15 21:22:26 - Authenticated user
+2025-07-15 21:22:26 - Changed session id from 9434C7F18650A2D6D39E4A4DFBFE6679
+2025-07-15 21:22:26 - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@170f7994]
+2025-07-15 21:22:26 - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]
+2025-07-15 21:22:26 - === LOGIN BEM-SUCEDIDO ===
+2025-07-15 21:22:26 - Usuário: regis@ifce.com
+2025-07-15 21:22:26 - Authorities: [ROLE_USER]
+2025-07-15 21:22:26 - Request URI: /login
+2025-07-15 21:22:26 - Redirecionando para: /dashboard
+2025-07-15 21:22:26 - Securing GET /dashboard
+2025-07-15 21:22:26 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:26 - Secured GET /dashboard
+2025-07-15 21:22:26 - Securing GET /favicon.ico
+2025-07-15 21:22:26 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:26 - Secured GET /favicon.ico
+2025-07-15 21:22:26 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:22:34 - Securing GET /filmes
+2025-07-15 21:22:34 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:34 - Secured GET /filmes
+2025-07-15 21:22:34 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:22:34 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:22:34 - Securing GET /script.js
+2025-07-15 21:22:34 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:34 - Secured GET /script.js
+2025-07-15 21:22:34 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:22:34 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:22:34 - Securing GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:22:34 - Secured GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:22:34 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource script.js.]
+2025-07-15 21:22:34 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:34 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:34 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:34 - Securing GET /favicon.ico
+2025-07-15 21:22:34 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:34 - Secured GET /favicon.ico
+2025-07-15 21:22:34 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:22:38 - Securing GET /filmes/16
+2025-07-15 21:22:38 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:38 - Secured GET /filmes/16
+2025-07-15 21:22:38 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:22:38 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:22:38 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:40 - Securing GET /filmes/16
+2025-07-15 21:22:40 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:22:40 - Secured GET /filmes/16
+2025-07-15 21:22:40 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:22:40 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:22:40 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:06 - Securing GET /filmes/16
+2025-07-15 21:24:06 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:06 - Secured GET /filmes/16
+2025-07-15 21:24:07 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:24:07 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:24:07 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:18 - Securing POST /filmes/adicionar
+2025-07-15 21:24:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:18 - Secured POST /filmes/adicionar
+2025-07-15 21:24:18 - Securing GET /filmes
+2025-07-15 21:24:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:18 - Secured GET /filmes
+2025-07-15 21:24:18 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:24:18 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:24:18 - Securing GET /script.js
+2025-07-15 21:24:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:18 - Secured GET /script.js
+2025-07-15 21:24:18 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:24:18 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:24:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:18 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource script.js.]
+2025-07-15 21:24:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:18 - Securing GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:24:18 - Securing GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:24:18 - Secured GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:24:18 - Secured GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:24:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:18 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg.]
+2025-07-15 21:24:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:18 - Securing GET /favicon.ico
+2025-07-15 21:24:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:18 - Secured GET /favicon.ico
+2025-07-15 21:24:18 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:24:29 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-15 21:24:29 - Graceful shutdown complete
+2025-07-15 21:24:29 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15 21:24:29 - HikariPool-1 - Shutdown initiated...
+2025-07-15 21:24:29 - HikariPool-1 - Shutdown completed.
+2025-07-15 21:24:35 - Starting LocadoraFilmesApplication using Java 24.0.1 with PID 8628 (C:\Users\extre\Documents\Locadora-Filmes\target\classes started by extre in C:\Users\extre\Documents\Locadora-Filmes)
+2025-07-15 21:24:35 - Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-07-15 21:24:35 - No active profile set, falling back to 1 default profile: "default"
+2025-07-15 21:24:35 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-15 21:24:35 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-15 21:24:36 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-15 21:24:37 - Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+2025-07-15 21:24:38 - Tomcat initialized with port 8080 (http)
+2025-07-15 21:24:38 - Starting service [Tomcat]
+2025-07-15 21:24:38 - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-15 21:24:38 - Initializing Spring embedded WebApplicationContext
+2025-07-15 21:24:38 - Root WebApplicationContext: initialization completed in 3424 ms
+2025-07-15 21:24:38 - HikariPool-1 - Starting...
+2025-07-15 21:24:39 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@50f219a3
+2025-07-15 21:24:39 - HikariPool-1 - Start completed.
+2025-07-15 21:24:40 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-15 21:24:40 - HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-07-15 21:24:40 - HHH000026: Second-level cache disabled
+2025-07-15 21:24:41 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-15 21:24:41 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-15 21:24:41 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-15 21:24:42 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-15 21:24:43 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15 21:24:43 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-15 21:24:44 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-15 21:24:45 - Configurando DaoAuthenticationProvider...
+2025-07-15 21:24:45 - DaoAuthenticationProvider configurado
+2025-07-15 21:24:45 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-07-15 21:24:45 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-07-15 21:24:45 - Configurando Spring Security...
+2025-07-15 21:24:45 - Spring Security configurado com sucesso
+2025-07-15 21:24:45 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-07-15 21:24:46 - LiveReload server is running on port 35729
+2025-07-15 21:24:46 - Tomcat started on port 8080 (http) with context path '/'
+2025-07-15 21:24:46 - Started LocadoraFilmesApplication in 12.497 seconds (process running for 13.472)
+2025-07-15 21:24:48 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-15 21:24:48 - Initializing Servlet 'dispatcherServlet'
+2025-07-15 21:24:48 - Completed initialization in 2 ms
+2025-07-15 21:24:48 - Securing GET /filmes
+2025-07-15 21:24:48 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:48 - Secured GET /filmes
+2025-07-15 21:24:49 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:24:49 - Securing GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:24:49 - Secured GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:24:49 - Securing GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:24:49 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:24:49 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:24:49 - Secured GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:24:49 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:24:49 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:49 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:49 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:49 - Securing GET /script.js
+2025-07-15 21:24:49 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:49 - Secured GET /script.js
+2025-07-15 21:24:49 - Securing GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:24:49 - Secured GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:24:49 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:24:49 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:24:49 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:49 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:24:49 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:49 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:24:49 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:49 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:49 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource script.js.]
+2025-07-15 21:24:49 - Securing GET /favicon.ico
+2025-07-15 21:24:49 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:49 - Secured GET /favicon.ico
+2025-07-15 21:24:49 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:24:51 - Securing GET /filmes/23
+2025-07-15 21:24:51 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:24:51 - Secured GET /filmes/23
+2025-07-15 21:24:51 - Securing GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:24:51 - Secured GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:24:51 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:04 - Securing GET /filmes/16
+2025-07-15 21:25:04 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:04 - Secured GET /filmes/16
+2025-07-15 21:25:04 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:25:04 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:25:04 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:06 - Securing GET /filmes/23
+2025-07-15 21:25:06 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:06 - Secured GET /filmes/23
+2025-07-15 21:25:06 - Securing GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:06 - Secured GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:06 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:11 - Securing GET /filmes/23
+2025-07-15 21:25:11 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:11 - Secured GET /filmes/23
+2025-07-15 21:25:11 - Securing GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:11 - Secured GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:11 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:17 - Securing POST /filmes/atualizar-ajax/23
+2025-07-15 21:25:17 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:17 - Secured POST /filmes/atualizar-ajax/23
+2025-07-15 21:25:17 - Securing GET /filmes?success=true
+2025-07-15 21:25:17 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:17 - Secured GET /filmes?success=true
+2025-07-15 21:25:17 - Securing GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:17 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:25:17 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:25:17 - Secured GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:17 - Securing GET /script.js
+2025-07-15 21:25:17 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:17 - Secured GET /script.js
+2025-07-15 21:25:17 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:25:17 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:25:17 - Securing GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:25:17 - Secured GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:25:17 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:18 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource script.js.]
+2025-07-15 21:25:18 - Securing GET /favicon.ico
+2025-07-15 21:25:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:18 - Secured GET /favicon.ico
+2025-07-15 21:25:18 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:25:19 - Securing GET /filmes/23
+2025-07-15 21:25:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:19 - Secured GET /filmes/23
+2025-07-15 21:25:19 - Securing GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:19 - Secured GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:39 - Securing GET /filmes/23
+2025-07-15 21:25:39 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:39 - Secured GET /filmes/23
+2025-07-15 21:25:39 - Securing GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:39 - Secured GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:39 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:45 - Securing POST /filmes/atualizar-ajax/23
+2025-07-15 21:25:45 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:45 - Secured POST /filmes/atualizar-ajax/23
+2025-07-15 21:25:45 - Securing GET /filmes?error=N%C3%A3o%20foi%20poss%C3%ADvel%20atualizar%20o%20filme.%20J%C3%A1%20existe%20um%20filme%20com%20o%20nome%20%27Superman%27%20lan%C3%A7ado%20em%202025.
+2025-07-15 21:25:45 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:45 - Secured GET /filmes?error=N%C3%A3o%20foi%20poss%C3%ADvel%20atualizar%20o%20filme.%20J%C3%A1%20existe%20um%20filme%20com%20o%20nome%20%27Superman%27%20lan%C3%A7ado%20em%202025.
+2025-07-15 21:25:45 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:25:45 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:25:45 - Securing GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:25:45 - Secured GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:25:45 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:25:45 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:25:45 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:45 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:45 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:45 - Securing GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:45 - Securing GET /script.js
+2025-07-15 21:25:45 - Secured GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:45 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:45 - Secured GET /script.js
+2025-07-15 21:25:45 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource script.js.]
+2025-07-15 21:25:45 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:45 - Securing GET /favicon.ico
+2025-07-15 21:25:45 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:45 - Secured GET /favicon.ico
+2025-07-15 21:25:45 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:25:56 - Securing GET /filmes/18
+2025-07-15 21:25:56 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:56 - Secured GET /filmes/18
+2025-07-15 21:25:56 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:25:56 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:25:56 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:59 - Securing GET /filmes/23
+2025-07-15 21:25:59 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:25:59 - Secured GET /filmes/23
+2025-07-15 21:25:59 - Securing GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:59 - Secured GET /uploads/1b4b9172-61ee-4494-9e5f-ac921b1df385.jpg
+2025-07-15 21:25:59 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:03 - Securing GET /filmes/22
+2025-07-15 21:26:03 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:03 - Secured GET /filmes/22
+2025-07-15 21:26:03 - Securing GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:26:03 - Secured GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:26:03 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:05 - Securing POST /filmes/deletar/23
+2025-07-15 21:26:05 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:05 - Secured POST /filmes/deletar/23
+2025-07-15 21:26:05 - Securing GET /filmes
+2025-07-15 21:26:05 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:05 - Secured GET /filmes
+2025-07-15 21:26:05 - Securing GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:26:05 - Secured GET /uploads/73a4ad8a-07a5-4aa4-93bc-2860a05c79bd.jpg
+2025-07-15 21:26:05 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:26:05 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:26:05 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:05 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:05 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:26:05 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:26:05 - Securing GET /script.js
+2025-07-15 21:26:05 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:05 - Secured GET /script.js
+2025-07-15 21:26:05 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:05 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource script.js.]
+2025-07-15 21:26:05 - Securing GET /favicon.ico
+2025-07-15 21:26:05 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:05 - Secured GET /favicon.ico
+2025-07-15 21:26:05 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:26:19 - Securing POST /filmes/deletar/22
+2025-07-15 21:26:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:19 - Secured POST /filmes/deletar/22
+2025-07-15 21:26:19 - Securing GET /filmes
+2025-07-15 21:26:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:19 - Secured GET /filmes
+2025-07-15 21:26:19 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:26:19 - Securing GET /script.js
+2025-07-15 21:26:19 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:26:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:19 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:26:19 - Secured GET /script.js
+2025-07-15 21:26:19 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:26:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:19 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource script.js.]
+2025-07-15 21:26:19 - Securing GET /favicon.ico
+2025-07-15 21:26:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:19 - Secured GET /favicon.ico
+2025-07-15 21:26:19 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:26:23 - Securing GET /dashboard
+2025-07-15 21:26:23 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:23 - Secured GET /dashboard
+2025-07-15 21:26:23 - Securing GET /favicon.ico
+2025-07-15 21:26:23 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:23 - Secured GET /favicon.ico
+2025-07-15 21:26:23 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:26:24 - Securing POST /logout
+2025-07-15 21:26:24 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:24 - Logging out [UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=regis@ifce.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9434C7F18650A2D6D39E4A4DFBFE6679], Granted Authorities=[ROLE_USER]]]
+2025-07-15 21:26:24 - Invalidated session 25E382BC9EF50822DCFF60FBEA89F0EE
+2025-07-15 21:26:24 - Redirecting to /login?logout=true
+2025-07-15 21:26:24 - Securing GET /login?logout=true
+2025-07-15 21:26:24 - Secured GET /login?logout=true
+2025-07-15 21:26:24 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:26:24 - Error parameter: null
+2025-07-15 21:26:24 - Logout parameter: true
+2025-07-15 21:26:24 - AccessDenied parameter: null
+2025-07-15 21:26:24 - LOGOUT DETECTED - Adding success message to model
+2025-07-15 21:26:24 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:26:24 - Securing GET /favicon.ico
+2025-07-15 21:26:24 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:26:24 - Redirecting to http://localhost:8080/login
+2025-07-15 21:26:24 - Securing GET /login
+2025-07-15 21:26:24 - Secured GET /login
+2025-07-15 21:26:24 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:26:24 - Error parameter: null
+2025-07-15 21:26:24 - Logout parameter: null
+2025-07-15 21:26:24 - AccessDenied parameter: null
+2025-07-15 21:26:24 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:26:32 - Securing POST /login
+2025-07-15 21:26:32 - === CUSTOM USER DETAILS SERVICE ===
+2025-07-15 21:26:32 - Tentando carregar usuário com email: admin@admin.com
+2025-07-15 21:26:32 - Usuário encontrado: Admin (ID: 7)
+2025-07-15 21:26:32 - Senha do usuário (hash): $2a$10$BpQ8VE55TsuGq...
+2025-07-15 21:26:32 - UserDetails criado com sucesso para: admin@admin.com
+2025-07-15 21:26:32 - Authorities: [ROLE_ADMIN]
+2025-07-15 21:26:32 - Account non-expired: true
+2025-07-15 21:26:32 - Account non-locked: true
+2025-07-15 21:26:32 - Credentials non-expired: true
+2025-07-15 21:26:32 - Enabled: true
+2025-07-15 21:26:32 - Authenticated user
+2025-07-15 21:26:32 - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@1dda43a8]
+2025-07-15 21:26:32 - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]
+2025-07-15 21:26:32 - === LOGIN BEM-SUCEDIDO ===
+2025-07-15 21:26:32 - Usuário: admin@admin.com
+2025-07-15 21:26:32 - Authorities: [ROLE_ADMIN]
+2025-07-15 21:26:32 - Request URI: /login
+2025-07-15 21:26:32 - Redirecionando para: /dashboard
+2025-07-15 21:26:32 - Securing GET /dashboard
+2025-07-15 21:26:32 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:26:32 - Secured GET /dashboard
+2025-07-15 21:26:32 - Securing GET /favicon.ico
+2025-07-15 21:26:32 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:26:32 - Secured GET /favicon.ico
+2025-07-15 21:26:32 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:26:35 - Securing GET /admin
+2025-07-15 21:26:35 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:26:35 - Secured GET /admin
+2025-07-15 21:26:35 - Securing GET /favicon.ico
+2025-07-15 21:26:35 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:26:35 - Secured GET /favicon.ico
+2025-07-15 21:26:35 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:27:18 - Securing POST /admin/usuario/deletar/8
+2025-07-15 21:27:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:27:18 - Secured POST /admin/usuario/deletar/8
+2025-07-15 21:27:18 - Securing GET /admin
+2025-07-15 21:27:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:27:18 - Secured GET /admin
+2025-07-15 21:27:18 - Securing GET /favicon.ico
+2025-07-15 21:27:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:27:18 - Secured GET /favicon.ico
+2025-07-15 21:27:18 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:27:26 - Securing GET /dashboard
+2025-07-15 21:27:26 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:27:26 - Secured GET /dashboard
+2025-07-15 21:27:26 - Securing GET /favicon.ico
+2025-07-15 21:27:26 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:27:26 - Secured GET /favicon.ico
+2025-07-15 21:27:26 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:28:03 - Securing GET /admin
+2025-07-15 21:28:03 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:28:03 - Secured GET /admin
+2025-07-15 21:28:03 - Securing GET /favicon.ico
+2025-07-15 21:28:03 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:28:03 - Secured GET /favicon.ico
+2025-07-15 21:28:03 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:28:05 - Securing GET /dashboard
+2025-07-15 21:28:05 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:28:05 - Secured GET /dashboard
+2025-07-15 21:28:05 - Securing GET /favicon.ico
+2025-07-15 21:28:05 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:28:05 - Secured GET /favicon.ico
+2025-07-15 21:28:05 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:28:06 - Securing POST /logout
+2025-07-15 21:28:06 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:28:06 - Logging out [UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:28:06 - Invalidated session D903F2D35FEEB59EE9B029DA1CABF1FE
+2025-07-15 21:28:06 - Redirecting to /login?logout=true
+2025-07-15 21:28:06 - Securing GET /login?logout=true
+2025-07-15 21:28:06 - Secured GET /login?logout=true
+2025-07-15 21:28:06 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:28:06 - Error parameter: null
+2025-07-15 21:28:06 - Logout parameter: true
+2025-07-15 21:28:06 - AccessDenied parameter: null
+2025-07-15 21:28:06 - LOGOUT DETECTED - Adding success message to model
+2025-07-15 21:28:06 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:28:06 - Securing GET /favicon.ico
+2025-07-15 21:28:06 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:28:06 - Redirecting to http://localhost:8080/login
+2025-07-15 21:28:06 - Securing GET /login
+2025-07-15 21:28:06 - Secured GET /login
+2025-07-15 21:28:06 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:28:06 - Error parameter: null
+2025-07-15 21:28:06 - Logout parameter: null
+2025-07-15 21:28:06 - AccessDenied parameter: null
+2025-07-15 21:28:06 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:28:07 - Securing GET /registro
+2025-07-15 21:28:07 - Secured GET /registro
+2025-07-15 21:28:07 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:28:07 - Securing GET /favicon.ico
+2025-07-15 21:28:07 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:28:07 - Redirecting to http://localhost:8080/login
+2025-07-15 21:28:07 - Securing GET /login
+2025-07-15 21:28:07 - Secured GET /login
+2025-07-15 21:28:07 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:28:07 - Error parameter: null
+2025-07-15 21:28:07 - Logout parameter: null
+2025-07-15 21:28:07 - AccessDenied parameter: null
+2025-07-15 21:28:07 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:28:08 - Securing GET /login
+2025-07-15 21:28:08 - Secured GET /login
+2025-07-15 21:28:08 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:28:08 - Error parameter: null
+2025-07-15 21:28:08 - Logout parameter: null
+2025-07-15 21:28:08 - AccessDenied parameter: null
+2025-07-15 21:28:08 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:28:08 - Securing GET /favicon.ico
+2025-07-15 21:28:08 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:28:08 - Redirecting to http://localhost:8080/login
+2025-07-15 21:28:08 - Securing GET /login
+2025-07-15 21:28:08 - Secured GET /login
+2025-07-15 21:28:08 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:28:08 - Error parameter: null
+2025-07-15 21:28:08 - Logout parameter: null
+2025-07-15 21:28:08 - AccessDenied parameter: null
+2025-07-15 21:28:08 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:36:15 - Securing GET /registro
+2025-07-15 21:36:15 - Secured GET /registro
+2025-07-15 21:36:15 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:36:15 - Securing GET /favicon.ico
+2025-07-15 21:36:15 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:36:15 - Redirecting to http://localhost:8080/login
+2025-07-15 21:36:15 - Securing GET /login
+2025-07-15 21:36:15 - Secured GET /login
+2025-07-15 21:36:15 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:36:15 - Error parameter: null
+2025-07-15 21:36:15 - Logout parameter: null
+2025-07-15 21:36:15 - AccessDenied parameter: null
+2025-07-15 21:36:15 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:36:49 - Securing GET /login
+2025-07-15 21:36:49 - Secured GET /login
+2025-07-15 21:36:49 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:36:49 - Error parameter: null
+2025-07-15 21:36:49 - Logout parameter: null
+2025-07-15 21:36:49 - AccessDenied parameter: null
+2025-07-15 21:36:49 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:36:49 - Securing GET /favicon.ico
+2025-07-15 21:36:49 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:36:49 - Redirecting to http://localhost:8080/login
+2025-07-15 21:36:49 - Securing GET /login
+2025-07-15 21:36:49 - Secured GET /login
+2025-07-15 21:36:49 - === LOGIN PAGE ACCESS ===
+2025-07-15 21:36:49 - Error parameter: null
+2025-07-15 21:36:49 - Logout parameter: null
+2025-07-15 21:36:49 - AccessDenied parameter: null
+2025-07-15 21:36:49 - Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15 21:36:54 - Securing POST /login
+2025-07-15 21:36:54 - === CUSTOM USER DETAILS SERVICE ===
+2025-07-15 21:36:54 - Tentando carregar usuário com email: admin@admin.com
+2025-07-15 21:36:54 - Usuário encontrado: Admin (ID: 7)
+2025-07-15 21:36:54 - Senha do usuário (hash): $2a$10$BpQ8VE55TsuGq...
+2025-07-15 21:36:54 - UserDetails criado com sucesso para: admin@admin.com
+2025-07-15 21:36:54 - Authorities: [ROLE_ADMIN]
+2025-07-15 21:36:54 - Account non-expired: true
+2025-07-15 21:36:54 - Account non-locked: true
+2025-07-15 21:36:54 - Credentials non-expired: true
+2025-07-15 21:36:54 - Enabled: true
+2025-07-15 21:36:54 - Authenticated user
+2025-07-15 21:36:54 - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@3d8bd407]
+2025-07-15 21:36:54 - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]
+2025-07-15 21:36:54 - === LOGIN BEM-SUCEDIDO ===
+2025-07-15 21:36:54 - Usuário: admin@admin.com
+2025-07-15 21:36:54 - Authorities: [ROLE_ADMIN]
+2025-07-15 21:36:54 - Request URI: /login
+2025-07-15 21:36:54 - Redirecionando para: /dashboard
+2025-07-15 21:36:54 - Securing GET /dashboard
+2025-07-15 21:36:54 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:36:54 - Secured GET /dashboard
+2025-07-15 21:36:54 - Securing GET /favicon.ico
+2025-07-15 21:36:54 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:36:54 - Secured GET /favicon.ico
+2025-07-15 21:36:54 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:38:14 - Securing GET /filmes
+2025-07-15 21:38:14 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:38:14 - Secured GET /filmes
+2025-07-15 21:38:14 - Securing GET /script.js
+2025-07-15 21:38:14 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:38:14 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:38:14 - Secured GET /script.js
+2025-07-15 21:38:14 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:38:14 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:38:14 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:38:14 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource script.js.]
+2025-07-15 21:38:14 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:38:14 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:38:14 - Securing GET /favicon.ico
+2025-07-15 21:38:14 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:38:14 - Secured GET /favicon.ico
+2025-07-15 21:38:14 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:39:51 - Securing GET /filmes/18
+2025-07-15 21:39:51 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:39:51 - Secured GET /filmes/18
+2025-07-15 21:39:51 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:39:51 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:39:51 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:41:32 - Securing GET /dashboard
+2025-07-15 21:41:32 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:41:32 - Secured GET /dashboard
+2025-07-15 21:41:32 - Securing GET /favicon.ico
+2025-07-15 21:41:32 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:41:32 - Secured GET /favicon.ico
+2025-07-15 21:41:32 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:41:33 - Securing GET /admin
+2025-07-15 21:41:33 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:41:33 - Secured GET /admin
+2025-07-15 21:41:33 - Securing GET /favicon.ico
+2025-07-15 21:41:33 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:41:33 - Secured GET /favicon.ico
+2025-07-15 21:41:33 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:47:18 - Securing GET /dashboard
+2025-07-15 21:47:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:18 - Secured GET /dashboard
+2025-07-15 21:47:18 - Securing GET /favicon.ico
+2025-07-15 21:47:18 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:18 - Secured GET /favicon.ico
+2025-07-15 21:47:18 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:47:19 - Securing GET /filmes
+2025-07-15 21:47:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:19 - Secured GET /filmes
+2025-07-15 21:47:19 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:47:19 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:47:19 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:47:19 - Securing GET /script.js
+2025-07-15 21:47:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:19 - Secured GET /script.js
+2025-07-15 21:47:19 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:47:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:19 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource script.js.]
+2025-07-15 21:47:19 - Securing GET /favicon.ico
+2025-07-15 21:47:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:19 - Secured GET /favicon.ico
+2025-07-15 21:47:19 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-15 21:47:19 - Securing GET /filmes/16
+2025-07-15 21:47:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:19 - Secured GET /filmes/16
+2025-07-15 21:47:19 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:47:19 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:47:19 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:22 - Securing GET /filmes/18
+2025-07-15 21:47:22 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:22 - Secured GET /filmes/18
+2025-07-15 21:47:22 - Securing GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:47:22 - Secured GET /uploads/e2d64a05-13b6-4982-8299-de36fb05c425.jpg
+2025-07-15 21:47:22 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:25 - Securing GET /filmes/16
+2025-07-15 21:47:25 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:25 - Secured GET /filmes/16
+2025-07-15 21:47:25 - Securing GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:47:25 - Secured GET /uploads/f70372d2-7e6d-4e3f-93cd-96f22d1ad684.jpg
+2025-07-15 21:47:25 - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@admin.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN]]]
+2025-07-15 21:47:37 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-15 21:47:37 - Graceful shutdown complete
+2025-07-15 21:47:37 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15 21:47:37 - HikariPool-1 - Shutdown initiated...
+2025-07-15 21:47:37 - HikariPool-1 - Shutdown completed.

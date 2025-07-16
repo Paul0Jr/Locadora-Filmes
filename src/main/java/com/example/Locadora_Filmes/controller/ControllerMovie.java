@@ -76,7 +76,6 @@ public class ControllerMovie {
         }
 
         try {
-            // Gera um nome de arquivo único para evitar conflitos
             String fileExtension = originalFilename.substring(originalFilename.lastIndexOf(".")).toLowerCase();
 
             if (!fileExtension.matches("\\.(jpg|jpeg|png|gif|bmp|webp)$")) {
@@ -94,7 +93,6 @@ public class ControllerMovie {
             Path filePath = uploadPath.resolve(uniqueFilename);
             Files.write(filePath, imagemFile.getBytes());
 
-            // Salva o caminho relativo da imagem
             String urlImagem = "/uploads/" + uniqueFilename;
 
             System.out.println("=== DEBUG UPLOAD ===");
@@ -143,9 +141,8 @@ public class ControllerMovie {
 
         try {
             Movie existingMovie = serviceMovie.searchId(id);
-            String urlImagem = existingMovie.getImagem(); // Mantém a imagem atual por padrão
+            String urlImagem = existingMovie.getImagem();
 
-            // Se uma nova imagem foi enviada, processa ela
             if (imagemFile != null && !imagemFile.isEmpty()) {
                 // Validar tipo de arquivo
                 String originalFilename = imagemFile.getOriginalFilename();
@@ -185,7 +182,6 @@ public class ControllerMovie {
             redirectAttributes.addFlashAttribute("success", "Filme atualizado com sucesso!");
 
         } catch (RuntimeException e) {
-            // Captura erros específicos do serviço (incluindo duplicidade)
             if (e.getMessage().contains("Já existe um filme")) {
                 redirectAttributes.addFlashAttribute("error", "Não foi possível atualizar o filme. " + e.getMessage());
             } else {
@@ -214,9 +210,8 @@ public class ControllerMovie {
         
         try {
             Movie existingMovie = serviceMovie.searchId(id);
-            String urlImagem = existingMovie.getImagem(); // Mantém a imagem atual por padrão
+            String urlImagem = existingMovie.getImagem();
 
-            // Se uma nova imagem foi enviada, processa ela
             if (imagemFile != null && !imagemFile.isEmpty()) {
                 // Validar tipo de arquivo
                 String originalFilename = imagemFile.getOriginalFilename();
@@ -260,7 +255,6 @@ public class ControllerMovie {
             response.put("message", "Filme atualizado com sucesso!");
 
         } catch (RuntimeException e) {
-            // Captura erros específicos do serviço (incluindo duplicidade)
             response.put("success", false);
             if (e.getMessage().contains("Já existe um filme")) {
                 response.put("message", "Não foi possível atualizar o filme. " + e.getMessage());
