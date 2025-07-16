@@ -80,7 +80,6 @@ public class ControllerUser {
             }
 
         } catch (RuntimeException e) {
-            // Captura erros específicos do serviço
             if (e.getMessage().contains("Email já está cadastrado")) {
                 return "redirect:/registro?emailExists=true";
             }

@@ -47,7 +47,7 @@ public class ServiceUser {
 
         // Criptografar senha
         String passwordEncrypt = passwordEncoder.encode(password);
-        
+
         // Criar usuário com role padrão
         User user = new User(name.trim(), email.trim().toLowerCase(), passwordEncrypt, "ROLE_USER");
         return repositoryUser.save(user);
@@ -75,7 +75,7 @@ public class ServiceUser {
     public User updateUser(Long id, String name, String email, String role) {
         User user = repositoryUser.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário com id " + id + " não encontrado!"));
-        
+
         // Verificar se o email já existe (excluindo o usuário atual)
         if (!email.equals(user.getEmail())) {
             Optional<User> existingUser = repositoryUser.findByEmail(email);
@@ -83,7 +83,7 @@ public class ServiceUser {
                 throw new RuntimeException("Email já está cadastrado: " + email);
             }
         }
-        
+
         user.setName(name);
         user.setEmail(email);
         user.setRole(role);
